@@ -22,11 +22,13 @@ app.use(morgan("common"));
 app.use(express.json({ limit: "10mb" }));
 app.use(cookie());
 // app.use(cors());
-let origin="https://socialclient.onrender.com/"
+
+// let origin=process.env.Clent_URL
+
 app.use(
   cors({
     credentials: true,
-    origin
+    origin:process.env.Client_URL
   })
 );
 // app.use(cors({
